@@ -1,2 +1,2 @@
-# Vinculaci-n
+# Vinculación
 Proyecto de Reconocimiento de emociones 
