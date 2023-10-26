@@ -1,6 +1,8 @@
 import cv2
 import os
 import imutils
+import tkinter as tk
+from tkinter import messagebox
 
 #emotion = 'Enojo'
 #emotion = 'Felicidad'
@@ -9,7 +11,7 @@ import imutils
 #emotion = 'Neutral'
 emotion = 'Disgusto'
 
-dataPath = 'C:/Users/User/Documents/ESPE/Vinculación/Data'
+dataPath = 'C:/Users/User/Documents/ESPE/Vinculacion/Data'
 emotionsPath = dataPath + '/' + emotion
 
 if not os.path.exists(emotionsPath):
@@ -45,3 +47,7 @@ while True:
     
 cap.release()
 cv2.destroyAllWindows()
+root = tk.Tk()
+root.withdraw()
+messagebox.showinfo("Éxito", "Proceso completado con éxito")
+root.destroy()
