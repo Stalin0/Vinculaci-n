@@ -11,7 +11,7 @@ from tkinter import messagebox
 #emotion = 'Neutral'
 emotion = 'Disgusto'
 
-dataPath = 'C:/Users/User/Documents/ESPE/Vinculacion/Data'
+dataPath = 'C:/Users/User/Documents/GitHub/Vinculacion/Data'
 emotionsPath = dataPath + '/' + emotion
 
 if not os.path.exists(emotionsPath):
