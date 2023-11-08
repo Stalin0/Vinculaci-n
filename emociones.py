@@ -58,11 +58,7 @@ print('imagePaths=', imagePaths)
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-text = "Universidad de las Fuerzas Armadas ESPE"
-font = ImageFont.truetype("arial.ttf", 36)  
-text_color = (0, 0, 0)
-text_position = 0
-text_speed = 2
+
 
 while True:
     ret, frame = cap.read()
@@ -72,17 +68,7 @@ while True:
     auxFrame = gray.copy()
     nFrame = cv2.hconcat([frame, np.zeros((480, 300, 3), dtype=np.uint8)])
  
-    frame_pil = Image.fromarray(cv2.cvtColor(nFrame, cv2.COLOR_BGR2RGB))
-    draw = ImageDraw.Draw(frame_pil)
-    text_bbox = draw.textbbox((10, 30), text, font)
-    text_width = text_bbox[2] - text_bbox[0]
-    text_height = text_bbox[3] - text_bbox[1]
-    if text_position > nFrame.shape[1]:
-        text_position = -text_width
-    draw.text((text_position, 10), text, fill=text_color, font=font)
-    nFrame = cv2.cvtColor(np.array(frame_pil), cv2.COLOR_RGB2BGR)
 
-    text_position += text_speed
 
     faces = faceClassif.detectMultiScale(gray, 1.3, 5)
     
